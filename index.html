@@ -314,12 +314,21 @@ Dołącz do społeczności widzów i odkryj moje filmy na Vimeo i te starsze na 
     <div class="blog-filters" role="search" aria-label="Filtruj wpisy">
       <select id="blog-filter-cat" onchange="filterBlog()" aria-label="Filtruj po kategorii">
         <option value="">🏷️ Wszystkie kategorie</option>
-        
+        <option value="Temat na film">Temat na film</option>
       </select>
       <input type="text" id="blog-filter-date" oninput="filterBlog()" placeholder="🗓 Szukaj po dacie (np. 2025)" aria-label="Filtruj po dacie"/>
       <button onclick="clearBlogFilter()" class="blog-filter-clear" aria-label="Wyczyść filtry">✕ Wyczyść</button>
     </div>
-    <div class="blog-grid" id="blog-grid"><p style="color:#888">Brak wpisów.</p></div>
+    <div class="blog-grid" id="blog-grid">
+    <article class="blog-card" data-cat="Temat na film" data-date="25.04.2026" aria-label="Wpis: &quot;Wdech&quot; ">
+      <div class="blog-thumb" style="background:#E8E0FF"><span aria-hidden="true">📝</span></div>
+      <div class="blog-body">
+        <p class="blog-meta">📅 25.04.2026 · 🏷️ Temat na film</p>
+        <h3>&quot;Wdech&quot; </h3>
+        <p>O przemianie bohatera.</p>
+        <button class="blog-read" onclick="openBlog(0)" aria-label="Czytaj wpis: &quot;Wdech&quot; ">Czytaj więcej →</button>
+      </div>
+    </article></div>
     <p id="blog-no-results" style="display:none;color:#888;text-align:center;padding:32px 0">Brak wpisów pasujących do wybranych filtrów.</p>
   </div>
 
@@ -441,7 +450,7 @@ const YT1='https://www.youtube.com/@MarcinStrzeleckiWiFilms';
 const YT2='https://www.youtube.com/@piekarskiebeboki2319';
 const VIM='https://vimeo.com/wifilms';
 const COUNTDOWN_TARGET=new Date('2025-08-02T19:00');
-const BLOG_POSTS=[];
+const BLOG_POSTS=[{"title":"\"Wdech\" ","meta":"📅 25.04.2026 · 🏷️ Temat na film","body":"Chciałbym zrealizować coś dla mnie nietypowego, coś co będzie znacznie odbiegało od tematyki, która zdominowała moją pasję.  Przygotowałem sobie już scenariusz na krótki film, który byłby nakręcony w formie dokumentu fabularyzowanego. Nie wiem jeszcze czy uda mi się to zrealizować. \nBędzie to o ważnym dla człowieka wdechu, o którym często zapominamy. \nDo filmu gościnnie zaproszę koleżankę Katarzynę Bebiołkę z Malsamaj z Piekar Śląskich. ","mediaHTML":""}];
 
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
 
